@@ -1,18 +1,9 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <errno.h>
-#include <fcntl.h>
-#include <dirent.h>
-#include <linux/input.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <sys/select.h>
-#include <sys/time.h>
-#include <termios.h>
-#include <signal.h>
-#include <map>
+#include <stdio.h> //printf
+#include <stdlib.h> //exit
+#include <unistd.h> //read,close
+#include <fcntl.h> //O_RDONLY
+#include <linux/input.h> //EVIOCGNAME
+#include <map> //map
 
 int main(int argc, char* argv[])
 {
@@ -30,7 +21,7 @@ int main(int argc, char* argv[])
     numbers[458789] = 8;
     numbers[458790] = 9;
     numbers[458791] = 0;
-    numbers[458792] = 13;
+    numbers[458792] = 13; // {Enter}
 
     int fevdev = -1;
     int result = 0;
